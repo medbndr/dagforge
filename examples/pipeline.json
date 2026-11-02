@@ -1,0 +1,44 @@
+{
+  "tasks": [
+    {
+      "id": "orders",
+      "op": "literal",
+      "value": 120
+    },
+    {
+      "id": "returns",
+      "op": "literal",
+      "value": -9
+    },
+    {
+      "id": "net",
+      "op": "sum",
+      "deps": [
+        "orders",
+        "returns"
+      ]
+    },
+    {
+      "id": "price",
+      "op": "literal",
+      "value": 25
+    },
+    {
+      "id": "revenue",
+      "op": "product",
+      "deps": [
+        "net",
+        "price"
+      ]
+    },
+    {
+      "id": "report",
+      "op": "concat",
+      "deps": [
+        "net",
+        "revenue"
+      ],
+      "separator": " / revenue: "
+    }
+  ]
+}

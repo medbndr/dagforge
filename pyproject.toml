@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dagforge"
+version = "1.0.0"
+description = "Execute declarative data workflows with SQLite checkpoints and dependency-aware retries."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+dagforge = "dagforge.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["dagforge*"]
